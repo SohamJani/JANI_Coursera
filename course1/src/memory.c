@@ -20,6 +20,9 @@
  * @date April 1 2017
  *
  */
+#include <stdint.h>
+#include<stddef.h>
+#include<stdlib.h>
 #include "memory.h"
 
 /***********************************************************
@@ -52,4 +55,81 @@ void set_all(char * ptr, char value, unsigned int size){
 void clear_all(char * ptr, unsigned int size){
   set_all(ptr, 0, size);
 }
+
+
+/***********************************************************
+ New Function Definitions
+***********************************************************/
+
+int8_t * reserve_words(size_t length){
+  
+  int8_t * ptr1;
+  ptr1 = (int8_t *)malloc(length);  
+  
+  return ptr1;
+}
+
+int8_t free_words(uint32_t * src){
+
+  free((void *) src);
+  return 0;
+}
+
+uint8_t * my_memmove(uint8_t * src, uint8_t * dst, size_t length){
+  
+  for(int i =0; i<length; i++){
+    *(dst+i) = *(src+i); 
+  }
+  return dst;
+}
+
+uint8_t * my_memcpy(uint8_t * src, uint8_t * dst, size_t length){
+
+  if( !((src+length) >= dst) ){  // no overlap case 
+    for(int i =0; i<length; i++){
+      *(dst+i) = *(src+i); 
+    }
+  }
+  
+  else{   // for overlap case
+    uint8_t diff = (src+length)-dst; 
+    for(uint8_t j = length; j>=length-diff; j--){
+      *(dst+j) = *(src+j);   
+    }
+
+    for(int i =0; i<length-diff; i++){
+      *(dst+i) = *(src+i); 
+    }
+
+  }
+  return dst;
+}
+
+uint8_t * my_memset(uint8_t * src, size_t length, uint8_t value){
+  for(int i =0; i<length; i++){
+     *(src+i) = value;
+  }
+  return src;
+}
+ 
+uint8_t * my_memzero(uint8_t * src, size_t length){
+  for(int i =0; i<length; i++){
+     *(src+i) = 0;
+  }
+  return src;
+}
+
+uint8_t * my_reverse(uint8_t * src, size_t length){
+
+  int temp;
+  int temp_length = (int) length; 
+  for(int i =0; i<length/2; i++){
+    temp = *(src+i); 
+    *(src+i) = *(src+temp_length);
+    *(src+temp_length) = temp;
+    temp_length--; 
+  }
+  return src;
+}
+
 

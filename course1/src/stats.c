@@ -1,10 +1,10 @@
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file <stats.c> 
+ * @brief <Does some array computation >
  *
- * <Add Extended Description Here>
+ * <Will need verbose input to decide what to print>
  *
- * @author <Add FirsName LastName>
+ * @author <Soham Jani >
  * @date <Add date >
  *
  */
@@ -15,7 +15,7 @@
 /* Size of the Data Set */
 #define SIZE (40)
 
-void main() {
+int main() {
 
   unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
                               114, 88,   45,  76, 123,  87,  25,  23,
@@ -29,7 +29,7 @@ void main() {
   print_array(test,SIZE);
   print_statistics(test, SIZE);
   printf("\nEnd of output.....\n");
-  
+  return 0;
 }
 
 /* Add other Implementation File Code Here */

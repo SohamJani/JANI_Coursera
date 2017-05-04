@@ -34,7 +34,7 @@ OBJS=$(SOURCES:.c=.o)
 ifeq ($(PLATFORM),MSP432)
  CPU = cortex-m4
  ARCH = arm
- LINKER_FILE = ../msp432p401r.lds
+ LINKER_FILE = msp432p401r.lds
  CC = arm-none-eabi-gcc
  CFLAGS = -g -Wall -Werror -O0 -std=c99
  LDFLAGS = -mcpu=cortex-m4 -mthumb -march=armv7e-m -mfloat-abi=hard \
@@ -47,11 +47,14 @@ ifeq ($(PLATFORM),HOST)
  ARCH = $(shell arch)
  TARGET = DHOST
  CC =gcc
- CFLAGS = -g -Wall -Werror -O0 -std=c99 -D$(PLATFORM)
+ CFLAGS = -g -Wall -Werror -O0 -std=c99 -D$(PLATFORM) 
  SOURCES:= ./main.c ./memory.c 
  OBJS=$(SOURCES:.c=.o)
  COBJD = objdump
 endif
+
+############# Compile time switch for COURSE1########
+#####################################################
 
 ####################################################
 # Generates an Object directory to place objects in
@@ -112,7 +115,7 @@ c1m2.out: $(OBJS)
 clean:  
 	@echo ===============================
 	@echo Cleaning the directory 
-	rm *.o *.map *.i *.asm *.out 
+	rm ./src/*.o *.map ./src/*.i ./src/*.asm *.out 
 ##################################################
 
 
