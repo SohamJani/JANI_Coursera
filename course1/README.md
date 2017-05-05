@@ -9,6 +9,12 @@ Final Assignment:
 Commit 1: Just added the files according to the structure. 
 	  
 
-Commit 2: Making changes in the make file to add stats and verbose. 
-	  Added data.c/h files with empty definations
+Commit 2: Making changes in the make file to add stats and other files. 
+	  Added data.c/h files with complete definations
+          Added memory opterations in mem.c/h files
+
+Commit 3: Removed main from stats.c
+	  Will edit the main.c from c1m2 assignment
+          Added -DCOURSE as compile time switch
+          Added -VERBOSE 
 	  
