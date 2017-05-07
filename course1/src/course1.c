@@ -19,6 +19,7 @@
 
 #include <stdio.h>
 #include <stdint.h>
+#include<math.h>
 #include "platform.h"
 #include "course1.h"
 #include "memory.h"
@@ -342,7 +343,7 @@ void course1(void)
   for ( i = 0; i < TESTCOUNT; i++) 
   {
     failed += results[i];
-    printf("results[%d]:%d: \n",i,results[i]);
+    //printf("results[%d]:%d: \n",i,results[i]);
   }
  
   printf("--------------------------------\n");

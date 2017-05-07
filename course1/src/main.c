@@ -24,6 +24,7 @@
 #include <stdint.h>
 #include<stddef.h>
 #include<stdlib.h>
+#include<math.h>
 #include "platform.h"
 #include "memory.h"
 #include "course1.h"

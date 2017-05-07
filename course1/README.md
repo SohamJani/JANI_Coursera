@@ -23,4 +23,9 @@ Commit 4: "Coding for Test Cases"
  	  added -VERBOSE 
 	  Still results printed.
 
-Commit 5: "Final Attempt" 
+Commit 5: "Final Attempt"
+          Solved 0 test with pow
+          Results removed
+          Both platforms tested
+          Made submission ready
+           

@@ -109,7 +109,7 @@ all: c1m2.out
 c1m2.out: $(OBJS)  
 	@echo ==============================
 	@echo Building/Making All
-	$(CC) $(CFLAGS) $(LDFLAGS) $(INCLUDES) -o c1m2.out $(OBJS) -Wl,-Map=c1m2.map
+	$(CC) $(CFLAGS) $(LDFLAGS) $(INCLUDES) -o c1m2.out $(OBJS)  -lm -Wl,-Map=c1m2.map
 ##################################################
 
 
