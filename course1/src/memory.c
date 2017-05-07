@@ -23,6 +23,7 @@
 #include <stdint.h>
 #include<stddef.h>
 #include<stdlib.h>
+#include<stdio.h>
 #include "memory.h"
 
 /***********************************************************
@@ -122,13 +123,14 @@ uint8_t * my_memzero(uint8_t * src, size_t length){
 uint8_t * my_reverse(uint8_t * src, size_t length){
 
   int temp;
-  int temp_length = (int) length; 
+  int temp_length = (int) length-1; 
   for(int i =0; i<length/2; i++){
-    temp = *(src+i); 
+    temp = *(src+i);
     *(src+i) = *(src+temp_length);
     *(src+temp_length) = temp;
     temp_length--; 
   }
+
   return src;
 }
 

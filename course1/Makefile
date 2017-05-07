@@ -38,8 +38,8 @@ ifeq ($(PLATFORM),MSP432)
  CC = arm-none-eabi-gcc
  CFLAGS = -g -Wall -Werror -O0 -std=c99
  LDFLAGS = -mcpu=cortex-m4 -mthumb -march=armv7e-m -mfloat-abi=hard \
-           -mfpu=fpv4-sp-d16 --specs=nosys.specs \
-            -T$(LINKER_FILE) -D$(PLATFORM) -D$(COURSE)
+          -mfpu=fpv4-sp-d16 --specs=nosys.specs \
+          -T$(LINKER_FILE) -D$(PLATFORM) -D$(COURSE) -D$(VERBOSE)
  TARGET = MSP432
  COBJD = arm-none-eabi-objdump
 endif
@@ -48,7 +48,8 @@ ifeq ($(PLATFORM),HOST)
  ARCH = $(shell arch)
  TARGET = DHOST
  CC =gcc
- CFLAGS = -g -Wall -Werror -O0 -std=c99 -D$(PLATFORM) -D$(COURSE)
+ CFLAGS = -g -Wall -Werror -O0 -std=c99 \
+          -D$(PLATFORM) -D$(COURSE) -D$(VERBOSE)
  SOURCES:= ./src/main.c ./src/memory.c ./src/stats.c \
            ./src/course1.c ./src/data.c 
  OBJS=$(SOURCES:.c=.o)
